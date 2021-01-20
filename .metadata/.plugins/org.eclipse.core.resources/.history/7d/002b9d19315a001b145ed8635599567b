@@ -1,0 +1,39 @@
+package com.newlec.app;
+
+import javax.servlet.*;
+import javax.servlet.annotation.WebServlet;
+
+import java.io.*;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@WebServlet("/calc")
+public class calc extends HttpServlet{
+	@Override
+	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		resp.setCharacterEncoding("UTF-8");
+		resp.setContentType("text/html; charset = UTF-8");
+		PrintWriter out = resp.getWriter();
+		
+		String v_ = req.getParameter("v");
+		String op = req.getParameter("button");
+		int v = 0;
+		
+		if(v_ != null && !v_.equals("")) {
+			v = Integer.parseInt(v_);
+		}
+		ServletContext application = req.getServletContext();
+		application.setAttribute("value", v);
+		application.setAttribute("op", op);
+		
+		int result = 0;
+		
+		if(op.contentEquals("+"))
+			result ;
+		else
+			result;
+				
+	}
+}

@@ -1,0 +1,77 @@
+package com.newlec.app;
+
+import javax.servlet.*;
+import javax.servlet.annotation.WebServlet;
+
+import java.io.*;
+
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+@WebServlet("/calc")
+public class calc extends HttpServlet {
+	@Override
+	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		
+		resp.setCharacterEncoding("UTF-8");
+		resp.setContentType("text/html; charset = UTF-8");
+		Cookie[] cookies = req.getCookies();
+		PrintWriter out = resp.getWriter();
+		ServletContext application = req.getServletContext();
+		HttpSession session = req.getSession();
+		String v_ = req.getParameter("v");
+		String op = req.getParameter("button");
+			
+		
+		int v = 0;
+		int result = 0;
+		if(v_ != null && !v_.equals("")) {
+			v = Integer.parseInt(v_);
+		}
+		if(op.equals("=")) {
+			
+			//int x = (Integer)application.getAttribute("value");
+			int x = 0;
+			for(Cookie c : cookies) {
+				if(c.getName().equals("value")) {
+					x = Integer.parseInt(c.getValue());
+					break;
+				}
+					
+			}
+			int y = v;
+			String op2 = "";
+			//String op2 = (String)application.getAttribute("op");
+			for(Cookie c : cookies) {
+				if(c.getName().equals("op")) {
+					op2 = c.getValue();
+					break;
+				}
+					
+			}
+			if(op2.equals("+"))
+				result = x+y;
+			else
+				result = x-y;
+			resp.getWriter().printf("result is %d\n",result);
+		}
+		else {			
+			//application.setAttribute("value", v);
+			//application.setAttribute("op", op);
+			session.setAttribute("value", v);
+			session.setAttribute("op",op);
+			Cookie valuecookie = new Cookie("value", String.valueOf(v));
+			Cookie opcookie = new Cookie("op",op);
+			valuecookie.setPath("/");
+			opcookie.setPath("/");
+			valuecookie.setMaxAge(60*10);
+			resp.addCookie(valuecookie);
+			resp.addCookie(opcookie);
+			resp.sendRedirect("calc.html");
+		}		
+	}
+}

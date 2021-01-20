@@ -1,0 +1,29 @@
+package com.newlec.app;
+
+import javax.servlet.*;
+import javax.servlet.annotation.WebServlet;
+
+import java.io.*;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@WebServlet("/add2")
+public class add2 extends HttpServlet{
+	@Override
+	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		resp.setCharacterEncoding("UTF-8");
+		resp.setContentType("text/html; charset = UTF-8");
+		PrintWriter out = resp.getWriter();
+		
+		String[] nums = req.getParameterValues("num");
+		int xysum = 0;
+		
+		for(int i = 0; i < nums.length; i++) {
+			int num = Integer.parseInt("nums[i]");
+			xysum += num;
+		}
+		out.println("°á°ú : " + xysum);
+	}
+}

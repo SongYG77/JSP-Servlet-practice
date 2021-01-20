@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+	환영합니다. web content 가 홉 디렉토리 입니다.
+	<a href = "hi">인사하기 100번</a><br>
+	<a href = "hi?cnt=5">인사하기 5번</a><br>
+	<div>
+		<form action = "hi">
+			<div>
+				<label>인사를 몇번 반으시나요?</label>
+			</div>
+			<div>
+				<input type="text" name="cnt" value = "숫자입력">
+				<input type="submit" value = "출력">
+			</div>
+		</form>	
+	</div>
+</body>
+</html>

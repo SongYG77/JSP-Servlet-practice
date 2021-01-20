@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+	환영합니다. web content 가 홉 디렉토리 입니다.
+	<a href = "hi">인사하기 100번</a>
+	<a href = "hi?cnt=5">인사하기 5번</a>
+</body>
+</html>

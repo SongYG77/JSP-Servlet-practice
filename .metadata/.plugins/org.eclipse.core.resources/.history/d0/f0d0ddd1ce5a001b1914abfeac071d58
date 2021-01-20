@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action = "calc2" method = "post">
+	<table>
+		<tr>
+			<td colspan="4"></td>
+		</tr>
+		<tr>
+			<td><input type="submit" name = "button" value = "+"></td>
+			<td><input type="submit" name = "button" value = "+"></td>
+			<td><input type="submit" name = "button" value = "+"></td>
+			<td><input type="submit" name = "button" value = "+"></td>
+		</tr>
+		<tr>
+			<td><input type="submit" name = "button" value = "+"></td>
+			<td><input type="submit" name = "button" value = "+"></td>
+			<td><input type="submit" name = "button" value = "+"></td>
+			<td><input type="submit" name = "button" value = "+"></td>
+		</tr>
+		<tr>
+			<td><input type="submit" name = "button" value = "+"></td>
+			<td><input type="submit" name = "button" value = "+"></td>
+			<td><input type="submit" name = "button" value = "+"></td>
+			<td><input type="submit" name = "button" value = "+"></td>
+		</tr>
+		<tr>
+			<td><input type="submit" name = "button" value = "+"></td>
+			<td><input type="submit" name = "button" value = "+"></td>
+			<td><input type="submit" name = "button" value = "+"></td>
+			<td><input type="submit" name = "button" value = "+"></td>
+		</tr>
+		<tr>
+			<td><input type="submit" name = "button" value = "+"></td>
+			<td><input type="submit" name = "button" value = "+"></td>
+			<td><input type="submit" name = "button" value = "+"></td>
+			<td><input type="submit" name = "button" value = "+"></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td><input type="submit" name = "button" value = "+"></td>
+			<td><input type="submit" name = "button" value = "+"></td>
+			<td><input type="submit" name = "button" value = "+"></td>
+		</tr>
+	
+	</table>
+		<div>
+			<label>입력 : </label>
+			<input type = "text" name = "v">
+		</div>
+		<div>
+			<input type="submit" name = "button" value = "+">
+			<input type="submit" name = "button" value = "-">
+			<input type="submit" name = "button" value = "=">
+		</div>
+		<div>
+			결과 : 0
+		</div>
+	</form>
+</body>
+</html>
